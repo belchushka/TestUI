@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+}
+
+.app {
+    min-height: 100vh;
+
+}
+
+.for_users{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.home_page{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.home_page h1{
+    font-size: 100px;
+    color: white;
+}
+
+.login {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.login form {
+    width: 35%;
+    color: white;
+}
+
+.sending-data-nt {
+    transition: .5s;
+    position: absolute;
+    z-index: 10000;
+    left: 50%;
+    transform: translateX(-50%);
+}

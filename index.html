@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <script src="js/JQuery.js"></script>
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body class="bg-dark">
+
+<div class="app">
+    <div class="for_users" v-if="token!='undefined'">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="media/icon.jpg" alt="" style="width: 40px; height: 30px">
+                Attendance
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" @click = "home" v-bind:class ="[page == 'home'?'disabled':'active']" >Home<img src="media/home.svg" alt="" style="height:20px; padding: 1px;margin-left: 3px;"> </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" @click = "getallstudents">All students<img src="media/group.svg" alt="" style="height:20px; padding: 1px;margin-left: 3px;"></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link d-flex" href="#" @click="search">Search <img src="media/iconfinder_67_111124.svg" alt="" style="height:20px; padding: 1px;margin-left: 3px;"></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link d-flex" href="#" @click = "exit">Выход<img src="media/exit.svg" alt="" style="height:20px; padding: 1px;margin-left: 3px;"></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="home_page">
+            <h1>В школе : 71/500</h1>
+
+        </div>
+
+    </div>
+
+    <div class="login" v-if="token=='undefined'">
+        <form @submit.prevent="login">
+            <h1 style="text-align: center">Welcome</h1>
+            <div class="form-group">
+                <label for="login">Login</label>
+                <input type="text" class="form-control" id="login"  placeholder="Enter login">
+
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" id="login_btn" class="btn btn-primary " style="transition: .5s">Войти</button>
+        </form>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
